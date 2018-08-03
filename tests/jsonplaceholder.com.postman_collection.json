@@ -6,49 +6,6 @@
 	},
 	"item": [
 		{
-			"name": "https://jsonplaceholder.typicode.com/posts?userId=1",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "29851ad9-109b-4287-af9f-b200007d9bbf",
-						"type": "text/javascript",
-						"exec": [
-							"tests[\"Status code is 200\"] = responseCode.code === 200",
-							"tests[\"Body should contain \"] = responseBody === \"qui est esse\";"
-						]
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "https://jsonplaceholder.typicode.com/posts?userId=1",
-					"protocol": "https",
-					"host": [
-						"jsonplaceholder",
-						"typicode",
-						"com"
-					],
-					"path": [
-						"posts"
-					],
-					"query": [
-						{
-							"key": "userId",
-							"value": "1"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "https://jsonplaceholder.typicode.com/posts/1",
 			"event": [
 				{
@@ -78,6 +35,51 @@
 					"path": [
 						"posts",
 						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://jsonplaceholder.typicode.com/posts?userId=1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fc65625d-153f-4074-be1d-5a1571f9a008",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body should contain \"] = responseBody.has(\"magnam facilis autem\");",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts?userId=1",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
 					]
 				}
 			},
